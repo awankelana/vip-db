@@ -21,9 +21,8 @@
       - [SoalPaket](#soalpaket)
       - [SoalPaketitem](#soalpaketitem)
   - [ASESOR](#asesor)
-      - [UjianAsesiAsesor](#ujianasesiasesor)
       - [UjianJadwal](#ujianjadwal)
-      - [UjianJadwalAsesi](#ujianjadwalasesi)
+      - [UjianAsesiAsesor](#ujianasesiasesor)
       - [UjianAsesiJawaban (untuk menyimpan soal yg generate untuk user)](#ujianasesijawaban-untuk-menyimpan-soal-yg-generate-untuk-user)
       - [UjianAsesiJawabanPilihan  (untuk menyimpan jawabannya)](#ujianasesijawabanpilihan--untuk-menyimpan-jawabannya)
   - [ORDER](#order)
@@ -187,24 +186,22 @@
 
 ## ASESOR
 
+#### UjianJadwal
+- id
+- tanggal
+- title
+- paket_A (10 soal)
+
 #### UjianAsesiAsesor
 - id_asesi_asesor
 - asesi_id
+- ujian_jadwal_id
 - sertifikasi_id
 - asesor_id
 - order_id
 - status (menunggu, penilaian, selesai)
 - is_kompeten (t/f)
 - final_score_percentage
-
-#### UjianJadwal
-- user_id_asesor
-- tanggal
-- paket_A (10 soal)
-
-#### UjianJadwalAsesi
-- id_jadwal
-- id_asesi_asesor
 
 #### UjianAsesiJawaban (untuk menyimpan soal yg generate untuk user)
 - id_asesi_asesor
@@ -217,7 +214,7 @@
 - user_answer
 - catatan_asesor
 - max_score 
-- final_score 
+- final_score
 
 #### UjianAsesiJawabanPilihan  (untuk menyimpan jawabannya)
 - id_asesi_asesor_Jawaban
@@ -251,42 +248,3 @@
 
 
 #3. projects/lms#
-
-
-
-
-
-
-## ASESOR
-#### UjianJadwal
--> id
--> tanggal
--> title
--> paket_A (10 soal)
-#### UjianAsesiAsesor
--> id_asesi_asesor
--> asesi_id
--> ujian_jadwal_id
--> sertifikasi_id
--> asesor_id
--> order_id
--> status (menunggu, penilaian, selesai)
--> is_kompeten (t/f)
--> final_score_percentage
-#### UjianAsesiJawaban (untuk menyimpan soal yg generate untuk user)
--> id_asesi_asesor
--> soal_id
--> question (text)
--> question_type (essay, multiple_option)
--> answer_essay
--> answer_option (A, B, C, D)
--> urutan (1, 2 dst)
--> user_answer
--> catatan_asesor
--> max_score 
--> final_score 
-#### UjianAsesiJawabanPilihan  (untuk menyimpan jawabannya)
--> id_asesi_asesor_Jawaban
--> option
--> label (A, B, C, D)
-
